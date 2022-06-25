@@ -1,6 +1,4 @@
-import 'dart:async';
-
-import 'package:flutter/foundation.dart';
+part of 'mercatos_logic_functions.dart';
 
 /* 
   final Debouncer debouncer = Debouncer(300);
@@ -17,11 +15,11 @@ import 'package:flutter/foundation.dart';
   }
 
  */
-class Debouncer {
+class _Debouncer {
   final int milliseconds;
   Timer? _timer;
 
-  Debouncer(this.milliseconds);
+  _Debouncer(this.milliseconds);
 
   run(VoidCallback action) {
     if (_timer != null) {

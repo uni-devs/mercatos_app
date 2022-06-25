@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+part of '../utils/mercatos_ui_functions.dart';
 
-List<Widget> childrenWithSpacingFunction({
+List<Widget> _childrenWithSpacingFunction({
   required List<Widget> children,
   double spacing = 8,
 }) {
