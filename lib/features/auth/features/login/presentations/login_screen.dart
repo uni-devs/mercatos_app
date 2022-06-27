@@ -4,6 +4,7 @@ import 'package:mercatos/components/themes/mercatos_colors.dart';
 import 'package:mercatos/components/widgets/mercatos_dialogs.dart';
 
 import '../logic/login_form_bloc/login_bloc.dart';
+import 'widgets/login_form_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _SuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const LoginFormWidget();
   }
 }
 

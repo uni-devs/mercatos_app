@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:mercatos/components/network/mercatos_network.dart';
 import 'package:mercatos/features/auth/features/login/logic/login_form_bloc/login_bloc.dart';
@@ -53,10 +54,15 @@ class DependencySetup {
   factory DependencySetup() => _singleton;
 
   /// includes the list of repositories and blocs to be injected into the context.
-  Widget setUp(Widget child) {
+  Widget setUp(MaterialApp materialApp) {
     return _listOfRepoProviders(
       _listOfBlocProviders(
-        child,
+        ScreenUtilInit(
+          designSize: const Size(375, 812),
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: (context, _) => materialApp,
+        ),
       ),
     );
   }

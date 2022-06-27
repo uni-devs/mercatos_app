@@ -10,7 +10,7 @@ class _AlertSmartDialog extends StatelessWidget {
     this.onPressed,
     this.enableClose = false,
     this.buttonLabel = "Okay",
-    this.customColor,
+    // this.customColor,
     this.customIconSVGPath,
   }) : super(key: key);
   final _AlertType type;
@@ -23,7 +23,7 @@ class _AlertSmartDialog extends StatelessWidget {
 
   final String buttonLabel;
 
-  final Color? customColor;
+  // final Color? customColor;
 
   final String? customIconSVGPath;
 
