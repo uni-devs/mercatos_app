@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:mercatos/components/network/mercatos_network.dart';
+import 'package:mercatos/features/auth/features/login/logic/login_form_bloc/login_bloc.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../features/auth/features/login/data/repositories/login_repository.dart';
 
 part 'bloc_providers.dart';
 part 'repo_providers.dart';

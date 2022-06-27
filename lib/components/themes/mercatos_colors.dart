@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
+
 abstract class MercatosColors {
-  // static const Color primary_color = Color(0xFFEB5E10);
+  static const Color primary_color = Color(0xFFEB5E10);
   // static const Color sub_color = Color(0xFF74C247);
 
   // static const Color h1_font_color = Color(0xFF13192B);
