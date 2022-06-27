@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:mercatos/components/network/mercatos_network.dart';
 import 'package:path_provider/path_provider.dart';
 
 part 'bloc_providers.dart';
@@ -35,6 +36,9 @@ class DependencyInjection {
     );
 
     ///////////////////////////////////////////////////////////////////////////
+
+    /// set language for the app.
+    MercatosNetwork().setLanguage("en");
   }
 }
 

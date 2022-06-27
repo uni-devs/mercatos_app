@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-abstract class MercatosTheme {
+abstract class MercatosThemes {
   // static ThemeData get data => ThemeData(
   //       primaryColor: KargoColors.primary_color,
   //       primarySwatch: Colors.orange,

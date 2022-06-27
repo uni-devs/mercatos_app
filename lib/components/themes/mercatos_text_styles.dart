@@ -1,6 +1,6 @@
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-abstract class MercatosStyle {
+abstract class MercatosTextStyle {
   // static TextStyle get h1Style => TextStyle(
   //       fontSize: 24.sm,
   //       fontWeight: FontWeight.w600,

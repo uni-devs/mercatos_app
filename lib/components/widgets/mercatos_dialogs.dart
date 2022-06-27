@@ -102,3 +102,14 @@ abstract class MercatosDialogs {
     );
   }
 }
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    MercatosDialogs.loading();
+
+    return Container();
+  }
+}
