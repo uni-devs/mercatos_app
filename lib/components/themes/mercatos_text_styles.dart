@@ -1,11 +1,24 @@
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
+import 'package:mercatos/components/themes/mercatos_colors.dart';
+import 'package:mercatos/components/themes/mercatos_constants.dart';
 
 abstract class MercatosTextStyle {
-  // static TextStyle get h1Style => TextStyle(
-  //       fontSize: 24.sm,
-  //       fontWeight: FontWeight.w600,
-  //       color: KargoColors.h1_font_color,
-  //     );
+  static TextStyle get h1 => TextStyle(
+        fontSize: MercatosConstants.h1_font_size,
+        fontWeight: FontWeight.w600,
+        color: MercatosColors.primary_color,
+      );
+  static TextStyle get h4 => TextStyle(
+        fontSize: MercatosConstants.h4_font_size,
+        fontWeight: FontWeight.w500,
+        color: MercatosColors.grey_color,
+      );
+
+  static TextStyle get hint => TextStyle(
+        fontSize: MercatosConstants.h3_font_size,
+        fontWeight: FontWeight.w600,
+        color: MercatosColors.hint_search_color,
+      );
 
   // static TextStyle get titleBarStyle => TextStyle(
   //       fontSize: 18.sm,
@@ -16,11 +29,6 @@ abstract class MercatosTextStyle {
   //       fontSize: 14.sm,
   //       fontWeight: FontWeight.w600,
   //       color: const Color(0xff13192B),
-  //     );
-  // static TextStyle get h4Style_small => TextStyle(
-  //       fontSize: 12.sm,
-  //       fontWeight: FontWeight.w600,
-  //       color: KargoColors.hint_search_color,
   //     );
 
   // static TextStyle get submitStyle => TextStyle(

@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MercatosColors.background_color,
       body: BlocConsumer<LoginBloc, LoginState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {

@@ -1,6 +1,24 @@
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
+import 'package:mercatos/components/themes/mercatos_colors.dart';
+import 'package:mercatos/components/themes/mercatos_constants.dart';
+import 'package:mercatos/components/themes/mercatos_text_styles.dart';
 
 abstract class MercatosWidgetStyle {
+  static InputDecoration get input_decoration => InputDecoration(
+        hintStyle: MercatosTextStyle.hint,
+        fillColor: MercatosColors.text_filed_filled_color,
+        filled: true,
+        border: InputBorder.none,
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(MercatosConstants.border_radius),
+        ),
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(MercatosConstants.border_radius),
+        ),
+      );
+
   // static TextStyle get h1Style => TextStyle(
   //       fontSize: 24.sm,
   //       fontWeight: FontWeight.w600,

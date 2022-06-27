@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
 abstract class MercatosColors {
-  static const Color primary_color = Color(0xFFEB5E10);
-  // static const Color sub_color = Color(0xFF74C247);
+  static const Color primary_color = Color(0xFF0175C5);
+  static const Color grey_color = Color(0xffBEBFBF);
+  static const Color hint_search_color = Color(0xffBEBFBF);
+  static const Color text_filed_filled_color = Color(0xffFBFBFB);
+  static const Color background_color = Color(0xffFFFFFF);
 
+  // static const Color sub_color = Color(0xFF74C247);
+// 7E7E7E
+// 8ECAE6 15%
+//  BEBFBF
+// FBFBFB 72%
+//  0175C5 30%
   // static const Color h1_font_color = Color(0xFF13192B);
   // static const Color h2_font_color = Color(0xFF6B7280);
   // static const Color h3_font_color = Color(0xFF13192B);
@@ -26,8 +35,6 @@ abstract class MercatosColors {
 
   // static const Color delivered_color = Color(0xff27AE60);
 
-  // static const Color hint_search_color = Color(0xffC0C0C0);
-
   // static const Color shipment_tracking_bg = Color(0xffF6EFEA);
 
   // static Color error_color = Colors.red.shade700;
@@ -37,8 +44,6 @@ abstract class MercatosColors {
   // static const Color enabled_icon_color = Color(0xFF2D9CDB);
 
   // static Color homepage_bg_color = const Color(0xfffbdfcf);
-
-  // static Color grey_color = const Color(0xff737883);
 
   // static const Color amber_active_color = primary_color;
   // static const Color amber_inactive_color = hint_color;
