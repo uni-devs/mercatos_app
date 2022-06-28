@@ -19,16 +19,43 @@ abstract class MercatosWidgetStyle {
         ),
       );
 
+  static ButtonStyle get styled_button => ElevatedButton.styleFrom(
+        primary: MercatosColors.primary_color,
+        onPrimary: Colors.white,
+        elevation: 0.0,
+        shadowColor: MercatosColors.primary_color.withOpacity(0.5),
+        padding: const EdgeInsets.all(20),
+        shape: const RoundedRectangleBorder(
+          side: BorderSide.none,
+          borderRadius: BorderRadius.all(
+            Radius.circular(MercatosConstants.border_radius),
+          ),
+        ),
+      );
+
+  static ButtonStyle get icon_button => ElevatedButton.styleFrom(
+        shape: const RoundedRectangleBorder(
+          side: BorderSide.none,
+          borderRadius: BorderRadius.all(
+            Radius.circular(15),
+          ),
+        ),
+        onPrimary: MercatosColors.primary_color,
+        primary: MercatosColors.icon_button_color,
+        elevation: 4.0,
+        shadowColor: MercatosColors.primary_color.withOpacity(0.2),
+        onSurface: MercatosColors.primary_color.withOpacity(0.2),
+      );
   // static TextStyle get h1Style => TextStyle(
   //       fontSize: 24.sm,
   //       fontWeight: FontWeight.w600,
-  //       color: KargoColors.h1_font_color,
+  //       color: MercatosColors.h1_font_color,
   //     );
 
   // static TextStyle get titleBarStyle => TextStyle(
   //       fontSize: 18.sm,
   //       fontWeight: FontWeight.w600,
-  //       color: KargoColors.h1_font_color,
+  //       color: MercatosColors.h1_font_color,
   //     );
   // static TextStyle get h4Style => TextStyle(
   //       fontSize: 14.sm,
@@ -38,7 +65,7 @@ abstract class MercatosWidgetStyle {
   // static TextStyle get h4Style_small => TextStyle(
   //       fontSize: 12.sm,
   //       fontWeight: FontWeight.w600,
-  //       color: KargoColors.hint_search_color,
+  //       color: MercatosColors.hint_search_color,
   //     );
 
   // static TextStyle get submitStyle => TextStyle(
@@ -49,61 +76,61 @@ abstract class MercatosWidgetStyle {
   // static TextStyle get titleStyle => TextStyle(
   //       fontSize: 16.sm,
   //       fontWeight: FontWeight.w600,
-  //       color: KargoColors.disabled_icon_color,
+  //       color: MercatosColors.disabled_icon_color,
   //     );
 
   // static TextStyle get logoutStyle => TextStyle(
   //       fontSize: 14.sm,
   //       fontWeight: FontWeight.w500,
-  //       color: KargoColors.primary_color,
+  //       color: MercatosColors.primary_color,
   //     );
 
   // static TextStyle get h2Style => TextStyle(
   //       fontSize: 14.sm,
   //       fontWeight: FontWeight.w400,
-  //       color: KargoColors.h2_font_color,
+  //       color: MercatosColors.h2_font_color,
   //     );
 
   // static TextStyle get greenStyle => TextStyle(
   //       fontSize: 14.sm,
   //       fontWeight: FontWeight.w500,
-  //       color: KargoColors.sub_color,
+  //       color: MercatosColors.sub_color,
   //     );
 
   // static TextStyle get h3Style => TextStyle(
   //       fontSize: 14.sm,
   //       fontWeight: FontWeight.w400,
-  //       color: KargoColors.h3_font_color,
+  //       color: MercatosColors.h3_font_color,
   //     );
   // static TextStyle get h2Style_Italic => h2Style.copyWith(
   //       fontStyle: FontStyle.italic,
   //     );
 
   // static TextStyle get hintStyle => TextStyle(
-  //       color: KargoColors.hint_color,
+  //       color: MercatosColors.hint_color,
   //       fontSize: 14.sm,
   //     );
 
   // static TextStyle get errorStyle => TextStyle(
-  //       color: KargoColors.error_color,
+  //       color: MercatosColors.error_color,
   //       fontSize: 12.sm,
   //     );
 
   // static BorderSide get border_side => const BorderSide(
-  //       color: KargoColors.border_color,
+  //       color: MercatosColors.border_color,
   //       width: 1.5,
   //     );
 
   // static OutlineInputBorder get input_border => OutlineInputBorder(
   //       borderSide: border_side,
   //       borderRadius: const BorderRadius.all(
-  //         Radius.circular(KargoConstantsUI.border_radius),
+  //         Radius.circular(MercatosConstants.border_radius),
   //       ),
   //     );
 
   // static InputDecoration get input_decoration => InputDecoration(
   //       hintStyle: TextStyle(
-  //         color: KargoColors.hint_color,
+  //         color: MercatosColors.hint_color,
   //         fontSize: 14.sm,
   //       ),
   //       enabledBorder: input_border,
@@ -112,82 +139,54 @@ abstract class MercatosWidgetStyle {
 
   // static InputDecoration get date_birth_input_decoration => InputDecoration(
   //       hintStyle: TextStyle(
-  //         color: KargoColors.hint_color,
+  //         color: MercatosColors.hint_color,
   //         fontSize: 14.sm,
   //       ),
   //       border: input_border.copyWith(
   //         borderRadius: const BorderRadius.horizontal(
-  //           left: Radius.circular(KargoConstantsUI.border_radius),
+  //           left: Radius.circular(MercatosConstants.border_radius),
   //         ),
   //       ),
   //       enabledBorder: input_border.copyWith(
   //         borderSide: border_side,
   //         borderRadius: const BorderRadius.horizontal(
-  //           left: Radius.circular(KargoConstantsUI.border_radius),
+  //           left: Radius.circular(MercatosConstants.border_radius),
   //         ),
-  //       ),
-  //     );
-
-  // static ButtonStyle get submit_button_style => ElevatedButton.styleFrom(
-  //       primary: KargoColors.primary_color,
-  //       onPrimary: Colors.white.withOpacity(0.3),
-  //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.5),
-  //       padding: const EdgeInsets.all(20),
-  //       shape: RoundedRectangleBorder(
-  //         side: KargoStyle.border_side,
-  //         borderRadius: const BorderRadius.all(
-  //             Radius.circular(KargoConstantsUI.border_radius)),
   //       ),
   //     );
 
   // static ButtonStyle get select_button_style => ElevatedButton.styleFrom(
   //       primary: Colors.white,
-  //       onPrimary: KargoColors.primary_color,
+  //       onPrimary: MercatosColors.primary_color,
   //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.5),
+  //       shadowColor: MercatosColors.primary_color.withOpacity(0.5),
   //       padding: const EdgeInsets.all(20),
   //       shape: const RoundedRectangleBorder(
   //         borderRadius:
-  //             BorderRadius.all(Radius.circular(KargoConstantsUI.border_radius)),
+  //             BorderRadius.all(Radius.circular(MercatosConstants.border_radius)),
   //       ),
-  //     );
-
-  // static ButtonStyle get icon_button_style => ElevatedButton.styleFrom(
-  //       padding: const EdgeInsets.all(0.0),
-  //       shape: const CircleBorder(
-  //         side: BorderSide(
-  //           color: KargoColors.border_color,
-  //           width: 1.0,
-  //         ),
-  //       ),
-  //       onPrimary: KargoColors.primary_color,
-  //       primary: Colors.white,
-  //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.2),
-  //       onSurface: KargoColors.primary_color.withOpacity(0.2),
   //     );
 
   // static ButtonStyle get bottom_button_style => ElevatedButton.styleFrom(
   //       padding: const EdgeInsets.all(0.0),
   //       shape: const CircleBorder(),
-  //       onPrimary: KargoColors.primary_color,
+  //       onPrimary: MercatosColors.primary_color,
   //       primary: Colors.white,
   //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.2),
-  //       onSurface: KargoColors.primary_color.withOpacity(0.2),
+  //       shadowColor: MercatosColors.primary_color.withOpacity(0.2),
+  //       onSurface: MercatosColors.primary_color.withOpacity(0.2),
   //       minimumSize: const Size.fromRadius(25),
   //     );
 
   // static InputDecoration get inc_dec_decoration => InputDecoration(
   //       hintStyle: TextStyle(
-  //         color: KargoColors.hint_color,
+  //         color: MercatosColors.hint_color,
   //         fontSize: 14.sm,
   //       ),
   //       contentPadding: EdgeInsets.zero,
   //       enabledBorder: const OutlineInputBorder(
   //           borderSide: BorderSide(
-  //         color: KargoColors.border_color,
+  //         color: MercatosColors.border_color,
   //         width: 0.2,
   //         style: BorderStyle.solid,
   //       )),
@@ -197,12 +196,12 @@ abstract class MercatosWidgetStyle {
   //       padding: const EdgeInsets.all(0.0),
   //       shape: const RoundedRectangleBorder(
   //         borderRadius: BorderRadius.horizontal(
-  //             left: Radius.circular(KargoConstantsUI.border_radius)),
+  //             left: Radius.circular(MercatosConstants.border_radius)),
   //       ),
-  //       onPrimary: KargoColors.primary_color,
-  //       primary: KargoColors.primary_color.withOpacity(0.1),
+  //       onPrimary: MercatosColors.primary_color,
+  //       primary: MercatosColors.primary_color.withOpacity(0.1),
   //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.2),
+  //       shadowColor: MercatosColors.primary_color.withOpacity(0.2),
   //       onSurface: Colors.white,
   //       minimumSize: const Size.fromRadius(25),
   //     );
@@ -211,12 +210,12 @@ abstract class MercatosWidgetStyle {
   //       padding: const EdgeInsets.all(0.0),
   //       shape: const RoundedRectangleBorder(
   //         borderRadius: BorderRadius.horizontal(
-  //             right: Radius.circular(KargoConstantsUI.border_radius)),
+  //             right: Radius.circular(MercatosConstants.border_radius)),
   //       ),
   //       onPrimary: Colors.white,
-  //       primary: KargoColors.primary_color,
+  //       primary: MercatosColors.primary_color,
   //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.2),
+  //       shadowColor: MercatosColors.primary_color.withOpacity(0.2),
   //       onSurface: Colors.white,
   //       minimumSize: const Size.fromRadius(25),
   //     );
@@ -225,15 +224,15 @@ abstract class MercatosWidgetStyle {
   //       padding: const EdgeInsets.all(0.0),
   //       shape: const RoundedRectangleBorder(
   //           side: BorderSide(
-  //             color: KargoColors.border_color,
+  //             color: MercatosColors.border_color,
   //             width: 1.0,
   //           ),
   //           borderRadius: BorderRadius.all(Radius.circular(15))),
-  //       onPrimary: KargoColors.primary_color,
+  //       onPrimary: MercatosColors.primary_color,
   //       primary: Colors.white,
   //       elevation: 0.0,
-  //       shadowColor: KargoColors.primary_color.withOpacity(0.2),
-  //       onSurface: KargoColors.primary_color.withOpacity(0.2),
+  //       shadowColor: MercatosColors.primary_color.withOpacity(0.2),
+  //       onSurface: MercatosColors.primary_color.withOpacity(0.2),
   //     );
 
   // static ButtonStyle get list_tile_button_style => ElevatedButton.styleFrom(
@@ -241,16 +240,16 @@ abstract class MercatosWidgetStyle {
   //       shape: RoundedRectangleBorder(
   //         borderRadius: BorderRadius.circular(15.0.r),
   //       ),
-  //       onPrimary: KargoColors.sub_color.withOpacity(0.3),
-  //       primary: KargoColors.border_color,
+  //       onPrimary: MercatosColors.sub_color.withOpacity(0.3),
+  //       primary: MercatosColors.border_color,
   //       elevation: 0.0,
-  //       shadowColor: KargoColors.sub_color,
+  //       shadowColor: MercatosColors.sub_color,
   //     );
 
   // static BoxDecoration get box_decoration => BoxDecoration(
-  //       border: Border.all(width: 1.5, color: KargoColors.border_color),
+  //       border: Border.all(width: 1.5, color: MercatosColors.border_color),
   //       borderRadius: const BorderRadius.all(
-  //         Radius.circular(KargoConstantsUI.border_radius),
+  //         Radius.circular(MercatosConstants.border_radius),
   //       ),
   //       /* color: Colors.white,
   //       boxShadow: const [
@@ -268,7 +267,7 @@ abstract class MercatosWidgetStyle {
   //       color: Colors.white,
   //       boxShadow: [
   //         BoxShadow(
-  //           color: KargoColors.primary_color.withOpacity(0.1),
+  //           color: MercatosColors.primary_color.withOpacity(0.1),
   //           blurRadius: 9,
   //           spreadRadius: 5,
   //           offset: const Offset(0, 3),
@@ -281,7 +280,7 @@ abstract class MercatosWidgetStyle {
   //       color: Colors.white,
   //       boxShadow: [
   //         BoxShadow(
-  //           color: KargoColors.sub_color.withOpacity(0.1),
+  //           color: MercatosColors.sub_color.withOpacity(0.1),
   //           blurRadius: 9,
   //           spreadRadius: 5,
   //           offset: const Offset(0, 3),
@@ -291,7 +290,7 @@ abstract class MercatosWidgetStyle {
 
   // static BoxDecoration get selection_box_decoration => const BoxDecoration(
   //     borderRadius: BorderRadius.all(
-  //       Radius.circular(KargoConstantsUI.border_radius),
+  //       Radius.circular(MercatosConstants.border_radius),
   //     ),
-  //     color: KargoColors.border_color);
+  //     color: MercatosColors.border_color);
 }

@@ -20,6 +20,13 @@ abstract class MercatosTextStyle {
         color: MercatosColors.hint_search_color,
       );
 
+  static TextStyle get divider => TextStyle(
+        fontSize: MercatosConstants.h4_font_size,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.8,
+        color: MercatosColors.divider_color,
+      );
+
   // static TextStyle get titleBarStyle => TextStyle(
   //       fontSize: 18.sm,
   //       fontWeight: FontWeight.w600,

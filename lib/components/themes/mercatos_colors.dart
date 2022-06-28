@@ -6,6 +6,8 @@ abstract class MercatosColors {
   static const Color hint_search_color = Color(0xffBEBFBF);
   static const Color text_filed_filled_color = Color(0xffFBFBFB);
   static const Color background_color = Color(0xffFFFFFF);
+  static const Color divider_color = Color(0xff8ECAE6);
+  static const Color icon_button_color = Color(0xffF2F8FC);
 
   // static const Color sub_color = Color(0xFF74C247);
 // 7E7E7E
