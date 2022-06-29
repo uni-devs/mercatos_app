@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mercatos/features/auth/features/login/presentations/login_screen.dart';
+import 'package:mercatos/features/auth/features/login/presentations/widgets/background_widget.dart';
 
 import 'dependencies/dependencies.dart';
 
@@ -16,11 +16,12 @@ class MercatosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DependencySetup().setUp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const LoginScreen(),
+        home: const VideoPage(),
       ),
     );
   }

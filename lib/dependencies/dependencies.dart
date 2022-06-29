@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:mercatos/components/network/mercatos_network.dart';
@@ -7,6 +8,7 @@ import 'package:mercatos/features/auth/features/login/logic/login_form_bloc/logi
 import 'package:path_provider/path_provider.dart';
 
 import '../features/auth/features/login/data/repositories/login_repository.dart';
+import '../features/auth/features/login/data/services/video_controller_service.dart';
 
 part 'bloc_providers.dart';
 part 'repo_providers.dart';

@@ -1,109 +1,60 @@
 import 'package:flutter/material.dart';
-import '../../../../../../components/widgets/VideoPlayerScrollable/video_player_scrollable.dart';
-import 'package:video_player/video_player.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BackgroundVideoScrolling extends StatefulWidget {
-  const BackgroundVideoScrolling({Key? key}) : super(key: key);
+import '../../data/models/video.dart';
+import '../../data/services/video_controller_service.dart';
+import '../../logic/video_player/video_player_bloc.dart';
+import '../../logic/video_player/video_player_event.dart';
+import '../../logic/video_player/video_player_state.dart';
+import 'video_player_widget.dart';
 
-  @override
-  State<BackgroundVideoScrolling> createState() =>
-      _BackgroundVideoScrollingState();
-}
-
-class _BackgroundVideoScrollingState extends State<BackgroundVideoScrolling> {
-  late Controller controller;
-  late VideoPlayerController _videoController;
-  late Future<void> _initializeVideoPlayerFuture;
-  final videos = [
-    'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-    'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
-    'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-    'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4'
-  ];
-  final colors = [
-    Colors.black,
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-  ];
-  @override
-  initState() {
-    super.initState();
-    controller = Controller()
-      ..addListener((event) {
-        _handleCallbackEvent(event.direction, event.success,
-            currentIndex: controller.getScrollPosition());
-      });
-
-    _videoController = VideoPlayerController.network(videos[0])
-      ..initialize().then((_) {
-        setState(() {});
-      });
-
-    _videoController.play();
-    _videoController.setLooping(true);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _videoController.dispose();
-  }
+class VideoPage extends StatelessWidget {
+  const VideoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: VideoFullPageScroller(
-        contentSize: videos.length,
-        swipePositionThreshold: 0,
-        swipeVelocityThreshold: MediaQuery.of(context).size.height * 0.2,
-        animationDuration: const Duration(milliseconds: 200),
-        controller: controller,
-        builder: (BuildContext context, int index) {
-          return Container(
-            color: Colors.red,
-            child: Stack(children: [
-              Center(
-                child: _videoController.value.isInitialized
-                    ? AspectRatio(
-                        aspectRatio: _videoController.value.aspectRatio,
-                        child: VideoPlayer(_videoController),
-                      )
-                    : const Center(child: CircularProgressIndicator()),
-              )
-
-              // _videoController.value.isInitialized
-              //     ? FutureBuilder(
-              //         future: _initializeVideoPlayerFuture,
-              //         builder: (context, snapshot) {
-              //           if (snapshot.connectionState == ConnectionState.done) {
-              //             return AspectRatio(
-              //               aspectRatio: _videoController.value.aspectRatio,
-              //               child: VideoPlayer(_videoController),
-              //             );
-              //           } else {
-              //             return const Center(
-              //                 child: CircularProgressIndicator());
-              //           }
-              //         },
-              //       )
-              //     : const Center(child: CircularProgressIndicator()),
-            ]),
-          );
-        },
+      body: SafeArea(
+        child: BlocProvider<VideoPlayerBloc>(
+          create: (context) => VideoPlayerBloc(
+              videoControllerService:
+                  RepositoryProvider.of<VideoControllerService>(context))
+            ..add(VideoPlayerSelected(Video(
+              title: 'Fluttering Butterfly',
+              url:
+                  'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+            ))),
+          child: BlocBuilder<VideoPlayerBloc, VideoPlayerState>(
+            builder: (context, state) {
+              return _getPlayer(context, state);
+            },
+          ),
+        ),
       ),
     );
   }
 
-  void _handleCallbackEvent(ScrollDirection direction, ScrollSuccess success,
-      {required int currentIndex}) {
-    _videoController = VideoPlayerController.network(videos[0])
-      ..initialize().then((_) {
-        setState(() {});
-      });
-    _videoController.play();
+  Widget _getPlayer(BuildContext context, VideoPlayerState state) {
+    if (state is VideoPlayerStateLoaded) {
+      return const VideoPlayer();
+    }
 
-    debugPrint(
-        "Scroll callback received with data: {direction: $direction, success: $success and index: $currentIndex}");
+    if (state is VideoPlayerStateError) {
+      return Container(
+        height: MediaQuery.of(context).size.height,
+        color: Colors.grey,
+        child: Center(
+          child: Text(state.message),
+        ),
+      );
+    }
+
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      color: Colors.grey,
+      child: const Center(
+        child: Text('Initialising video...'),
+      ),
+    );
   }
 }
