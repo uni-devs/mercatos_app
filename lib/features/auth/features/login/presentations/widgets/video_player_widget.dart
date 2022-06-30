@@ -29,60 +29,60 @@ class VideoPlayerWidget extends StatelessWidget {
           animationDuration: const Duration(milliseconds: 200),
           controller: bloc.scrollController,
           builder: (BuildContext context, int index) {
-            return Container(
-              color: MercatosColors.background_video_color,
-              child: Stack(children: [
-                Center(
-                  child: controller != null
-                      ? InkWell(
-                          onTap: (() {
-                            bloc.add(VideoPlayerToggled());
-                          }),
-                          child: AspectRatio(
+            return InkWell(
+              onTap: (() {
+                bloc.add(VideoPlayerToggled());
+              }),
+              child: Container(
+                color: MercatosColors.background_video_color,
+                child: Stack(children: [
+                  Center(
+                    child: controller != null
+                        ? AspectRatio(
                             aspectRatio: controller.value.aspectRatio,
                             child: VideoPlayer(controller),
-                          ),
-                        )
-                      : const Center(child: LoadingDialog()),
-                ),
-                Positioned(
-                  bottom: 160.h,
-                  right: 15.w,
-                  child: Wrap(
-                    direction: Axis.vertical,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    spacing: 18.h,
-                    children: [
-                      VideoAction(
-                        onPressed: () {},
-                        actionType: VideoActionType.love,
-                        data: state.listVideos[state.selectedVideo].likes
-                            .toString(),
-                      ),
-                      VideoAction(
-                        onPressed: () {},
-                        actionType: VideoActionType.comment,
-                        data: state.listVideos[state.selectedVideo].comments
-                            .toString(),
-                      ),
-                      VideoAction(
-                        onPressed: () async {
-                          String uri = MercatosConstants.appUrl();
-                          if (!await launchUrl(
-                            Uri.parse(uri),
-                            mode: LaunchMode.externalApplication,
-                          )) {
-                            throw 'Could not launch $uri';
-                          }
-                        },
-                        actionType: VideoActionType.share,
-                        data: "",
-                      ),
-                    ],
+                          )
+                        : const Center(child: LoadingDialog()),
                   ),
-                ),
-                const PlayPauseIcon(),
-              ]),
+                  Positioned(
+                    bottom: 160.h,
+                    right: 15.w,
+                    child: Wrap(
+                      direction: Axis.vertical,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      spacing: 18.h,
+                      children: [
+                        VideoAction(
+                          onPressed: () {},
+                          actionType: VideoActionType.love,
+                          data: state.listVideos[state.selectedVideo].likes
+                              .toString(),
+                        ),
+                        VideoAction(
+                          onPressed: () {},
+                          actionType: VideoActionType.comment,
+                          data: state.listVideos[state.selectedVideo].comments
+                              .toString(),
+                        ),
+                        VideoAction(
+                          onPressed: () async {
+                            String uri = MercatosConstants.appUrl();
+                            if (!await launchUrl(
+                              Uri.parse(uri),
+                              mode: LaunchMode.externalApplication,
+                            )) {
+                              throw 'Could not launch $uri';
+                            }
+                          },
+                          actionType: VideoActionType.share,
+                          data: "",
+                        ),
+                      ],
+                    ),
+                  ),
+                  const PlayPauseIcon(),
+                ]),
+              ),
             );
           },
         );
