@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mercatos/components/themes/mercatos_themes.dart';
 import 'package:mercatos/features/auth/features/login/presentations/widgets/background_widget.dart';
-
 import 'dependencies/dependencies.dart';
 
 void main() async {
@@ -17,10 +17,8 @@ class MercatosApp extends StatelessWidget {
     return DependencySetup().setUp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        title: 'Mercatos',
+        theme: MercatosThemes.data,
         home: const VideoPage(),
       ),
     );

@@ -8,11 +8,11 @@ import 'types.dart';
 export 'controller.dart';
 export 'types.dart';
 
-/// A fullscreen vertical scroller like TikTok
+/// A full screen vertical scroll like TikTok
 ///
-/// Use [VideoFullPageScroller] as you would `ListView.Builder()`
-class VideoFullPageScroller extends StatefulWidget {
-  const VideoFullPageScroller({
+/// Use [VideoFullPageScroll] as you would `ListView.Builder()`
+class VideoFullPageScroll extends StatefulWidget {
+  const VideoFullPageScroll({
     Key? key,
     required this.contentSize,
     required this.builder,
@@ -47,10 +47,10 @@ class VideoFullPageScroller extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _VideoFullPageScrollerState createState() => _VideoFullPageScrollerState();
+  _VideoFullPageScrollState createState() => _VideoFullPageScrollState();
 }
 
-class _VideoFullPageScrollerState extends State<VideoFullPageScroller>
+class _VideoFullPageScrollState extends State<VideoFullPageScroll>
     with SingleTickerProviderStateMixin {
   late Size _containerSize;
   late double _cardOffset;
@@ -88,7 +88,6 @@ class _VideoFullPageScrollerState extends State<VideoFullPageScroller>
             _animateToPosition(event.data as int);
             break;
         }
-        debugPrint("controller went: $event");
       });
     }
     super.initState();

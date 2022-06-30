@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:mercatos/components/utils/mercatos_ui_functions.dart';
 
+import '../themes/mercatos_colors.dart';
+
 part 'alert_dialog_widget.dart';
 
 abstract class MercatosDialogs {

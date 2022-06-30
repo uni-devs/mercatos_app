@@ -8,13 +8,8 @@ abstract class MercatosColors {
   static const Color background_color = Color(0xffFFFFFF);
   static const Color divider_color = Color(0xff8ECAE6);
   static const Color icon_button_color = Color(0xffF2F8FC);
+  static const Color background_video_color = Colors.black;
 
-  // static const Color sub_color = Color(0xFF74C247);
-// 7E7E7E
-// 8ECAE6 15%
-//  BEBFBF
-// FBFBFB 72%
-//  0175C5 30%
   // static const Color h1_font_color = Color(0xFF13192B);
   // static const Color h2_font_color = Color(0xFF6B7280);
   // static const Color h3_font_color = Color(0xFF13192B);

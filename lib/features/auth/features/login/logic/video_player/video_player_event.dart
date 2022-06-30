@@ -1,17 +1,33 @@
-import 'package:equatable/equatable.dart';
-
-import '../../data/models/video.dart';
+part of 'video_player_bloc.dart';
 
 abstract class VideoPlayerEvent extends Equatable {
   @override
   List<Object> get props => const [];
 }
 
-class VideoPlayerSelected extends VideoPlayerEvent {
-  final Video video;
+// * video player events
+class VideoPlayerChanged extends VideoPlayerEvent {
+  final int videoID;
+  final ScrollDirection scrollDirection;
 
-  VideoPlayerSelected(this.video);
+  VideoPlayerChanged(this.videoID, this.scrollDirection);
 
   @override
-  List<Object> get props => [video];
+  List<Object> get props => [videoID, scrollDirection];
+}
+
+class VideoPlayerToggled extends VideoPlayerEvent {
+  @override
+  List<Object> get props => [];
+}
+
+// * scrolling events
+class VideosFetched extends VideoPlayerEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class VideosAddFetched extends VideoPlayerEvent {
+  @override
+  List<Object> get props => [];
 }

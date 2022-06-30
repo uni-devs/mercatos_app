@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mercatos/components/themes/mercatos_colors.dart';
 import 'package:mercatos/components/themes/mercatos_constants.dart';
 
@@ -25,6 +26,13 @@ abstract class MercatosTextStyle {
         fontWeight: FontWeight.w400,
         letterSpacing: 0.8,
         color: MercatosColors.divider_color,
+      );
+
+  static TextStyle get number_text => GoogleFonts.inder(
+        fontSize: MercatosConstants.h2_font_size,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0,
+        color: MercatosColors.text_filed_filled_color,
       );
 
   // static TextStyle get titleBarStyle => TextStyle(

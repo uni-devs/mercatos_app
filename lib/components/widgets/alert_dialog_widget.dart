@@ -31,7 +31,6 @@ class _AlertSmartDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 350.w,
-      // decoration: MercatosStyle.box_decoration.copyWith(color: Colors.white),
       padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -61,7 +60,7 @@ class _AlertSmartDialog extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0.r),
         ),
-        // primary: MercatosColors.primary_color,
+        primary: MercatosColors.primary_color,
         elevation: 0.0,
         padding: EdgeInsets.all(20.r),
         side: BorderSide(
@@ -128,7 +127,7 @@ class _AlertSmartDialog extends StatelessWidget {
       padding: EdgeInsets.only(top: 15.h),
       child: BounceInDown(
         child: CircleAvatar(
-            backgroundColor: /* _alertColor */ Colors.white,
+            backgroundColor: /* _alertColor */ MercatosColors.background_color,
             radius: 30.r,
             child: /* SvgPicture.asset(
             _iconPath,

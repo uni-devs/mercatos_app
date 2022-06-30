@@ -6,9 +6,8 @@ MultiRepositoryProvider _listOfRepoProviders(Widget child) {
       RepositoryProvider<LoginRepo>(
         create: (_) => LoginRepo(),
       ),
-      RepositoryProvider<VideoControllerService>(
-        create: (context) =>
-            CachedVideoControllerService(DefaultCacheManager()),
+      RepositoryProvider<VideoPlayerRepo>(
+        create: (context) => VideoPlayerRepo(DefaultCacheManager()),
       ),
     ],
     child: child,

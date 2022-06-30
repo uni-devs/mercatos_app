@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mercatos/components/themes/mercatos_colors.dart';
+import 'package:mercatos/features/auth/features/login/data/repositories/video_player_repository.dart';
 
-import '../../data/models/video.dart';
-import '../../data/services/video_controller_service.dart';
+import '../../../../../../components/widgets/loading_widget.dart';
 import '../../logic/video_player/video_player_bloc.dart';
-import '../../logic/video_player/video_player_event.dart';
-import '../../logic/video_player/video_player_state.dart';
 import 'video_player_widget.dart';
 
 class VideoPage extends StatelessWidget {
@@ -14,16 +14,12 @@ class VideoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MercatosColors.background_video_color,
       body: SafeArea(
         child: BlocProvider<VideoPlayerBloc>(
           create: (context) => VideoPlayerBloc(
-              videoControllerService:
-                  RepositoryProvider.of<VideoControllerService>(context))
-            ..add(VideoPlayerSelected(Video(
-              title: 'Fluttering Butterfly',
-              url:
-                  'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-            ))),
+              videoPlayerRepo: RepositoryProvider.of<VideoPlayerRepo>(context))
+            ..add(VideosFetched()),
           child: BlocBuilder<VideoPlayerBloc, VideoPlayerState>(
             builder: (context, state) {
               return _getPlayer(context, state);
@@ -35,26 +31,20 @@ class VideoPage extends StatelessWidget {
   }
 
   Widget _getPlayer(BuildContext context, VideoPlayerState state) {
-    if (state is VideoPlayerStateLoaded) {
-      return const VideoPlayer();
-    }
-
-    if (state is VideoPlayerStateError) {
+    if (state.scrollingStatus == ScrollingStatus.loaded ||
+        state.videoPlayerStatus == VideoPlayerStatus.loaded) {
+      return const VideoPlayerWidget();
+    } else if (state.scrollingStatus == ScrollingStatus.error ||
+        state.videoPlayerStatus == VideoPlayerStatus.error) {
       return Container(
-        height: MediaQuery.of(context).size.height,
-        color: Colors.grey,
+        height: ScreenUtil.defaultSize.height,
+        color: MercatosColors.icon_button_color,
         child: Center(
-          child: Text(state.message),
+          child: Text(state.errorMessage ?? "Error"),
         ),
       );
+    } else {
+      return const Center(child: LoadingDialog());
     }
-
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      color: Colors.grey,
-      child: const Center(
-        child: Text('Initialising video...'),
-      ),
-    );
   }
 }

@@ -1,15 +1,12 @@
 library videoplayerscrollable;
 
 import 'dart:async';
-
-import 'package:flutter/material.dart';
-
 import './types.dart';
 
 /// Allows a consumer to control the list position and track current page
 /// and any emitted events through a [ScrollEventCallback].
 /// Track page and scroll events without further configuration. For control
-/// of the Scroller, use the [attach] method.
+/// of the Scroll, use the [attach] method.
 class Controller {
   List<ScrollEventCallback> _listeners = [];
   int _page = 0;
@@ -36,19 +33,15 @@ class Controller {
   }
 
   /// Called to provide a stream of [ControllerFeedback] events
-  /// into the [TikTokStyleFullPageScroller] such as [jumpToPosition]
+  /// into the [TikTokStyleFullPageScroll] such as [jumpToPosition]
   /// and [animateToPosition] along with their associated data..
   Stream<ControllerFeedback>? attach() {
-    feedback = StreamController.broadcast(onListen: () {
-      debugPrint("Something is listening to the stream of feedback events");
-    }, onCancel: () {
-      debugPrint("onCancel has been called");
-    });
+    feedback = StreamController.broadcast(onListen: () {}, onCancel: () {});
     return feedback?.stream;
   }
 
   /// Allows a consumer to listen to events by registering a [ScrollEventCallback]
-  /// to the controller. Remeber to use [disposeListeners] when disposing parent
+  /// to the controller. Remember to use [disposeListeners] when disposing parent
   /// widgets
   void addListener(ScrollEventCallback listener) {
     _listeners.add(listener);

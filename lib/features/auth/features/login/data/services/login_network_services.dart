@@ -14,5 +14,6 @@ abstract class LoginNetwork {
         },
       ),
     );
+    return data;
   }
 }

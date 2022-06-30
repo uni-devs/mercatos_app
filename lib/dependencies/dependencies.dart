@@ -8,7 +8,7 @@ import 'package:mercatos/features/auth/features/login/logic/login_form_bloc/logi
 import 'package:path_provider/path_provider.dart';
 
 import '../features/auth/features/login/data/repositories/login_repository.dart';
-import '../features/auth/features/login/data/services/video_controller_service.dart';
+import '../features/auth/features/login/data/repositories/video_player_repository.dart';
 
 part 'bloc_providers.dart';
 part 'repo_providers.dart';
