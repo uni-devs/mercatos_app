@@ -29,12 +29,17 @@ dependencies:
   scrollable_positioned_list: ^0.3.2
   url_launcher: ^6.1.4
   video_player: ^2.4.5
+  auto_route:
 
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+           
+  auto_route_generator:
+  build_runner:
 
+ 
 flutter:
   uses-material-design: true
   assets:

@@ -43,21 +43,22 @@ class _SuccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controllers = context.read<ScrollingCubit>();
     return Scaffold(
+        backgroundColor: Colors.transparent,
         body: ScrollablePositionedList.builder(
-      itemBuilder: (context, index) {
-        if (index == 0) {
-          return SizedBox(
-            height: ScreenUtil.defaultSize.height,
-            child: const VideoPage(),
-          );
-        } else {
-          return const LoginFormWidget();
-        }
-      },
-      itemCount: 2,
-      itemScrollController: controllers.itemScrollController,
-      itemPositionsListener: controllers.itemPositionsListener,
-    ));
+          itemBuilder: (context, index) {
+            if (index == 0) {
+              return SizedBox(
+                height: ScreenUtil.defaultSize.height,
+                child: const VideoPage(),
+              );
+            } else {
+              return const LoginFormWidget();
+            }
+          },
+          itemCount: 2,
+          itemScrollController: controllers.itemScrollController,
+          itemPositionsListener: controllers.itemPositionsListener,
+        ));
   }
 }
 

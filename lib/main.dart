@@ -19,7 +19,7 @@ class MercatosApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Mercatos',
         theme: MercatosThemes.data,
-        home: const LoginScreen(),
+        home: const Scaffold(),
       ),
     );
   }
