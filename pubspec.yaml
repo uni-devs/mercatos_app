@@ -24,7 +24,9 @@ dependencies:
   http_parser: ^4.0.1
   hydrated_bloc: ^8.1.0
   loading_animation_widget: ^1.2.0+2
+  modal_bottom_sheet: ^2.1.0
   path_provider: ^2.0.11
+  scrollable_positioned_list: ^0.3.2
   url_launcher: ^6.1.4
   video_player: ^2.4.5
 

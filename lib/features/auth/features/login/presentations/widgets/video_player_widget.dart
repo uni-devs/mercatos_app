@@ -97,20 +97,23 @@ enum VideoActionType {
   share,
 }
 
-// ignore: must_be_immutable
 class VideoAction extends StatelessWidget {
   final VideoActionType actionType;
   final String data;
-  late String assetName;
+
   final void Function()? onPressed;
-  VideoAction({
+
+  const VideoAction({
     Key? key,
     required this.actionType,
     required this.data,
     required this.onPressed,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final String assetName;
+
     switch (actionType) {
       case VideoActionType.love:
         assetName = 'assets/icons/love.svg';

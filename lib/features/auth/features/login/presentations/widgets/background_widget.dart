@@ -13,18 +13,15 @@ class VideoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MercatosColors.background_video_color,
-      body: SafeArea(
-        child: BlocProvider<VideoPlayerBloc>(
-          create: (context) => VideoPlayerBloc(
-              videoPlayerRepo: RepositoryProvider.of<VideoPlayerRepo>(context))
-            ..add(VideosFetched()),
-          child: BlocBuilder<VideoPlayerBloc, VideoPlayerState>(
-            builder: (context, state) {
-              return _getPlayer(context, state);
-            },
-          ),
+    return SafeArea(
+      child: BlocProvider<VideoPlayerBloc>(
+        create: (context) => VideoPlayerBloc(
+            videoPlayerRepo: RepositoryProvider.of<VideoPlayerRepo>(context))
+          ..add(VideosFetched()),
+        child: BlocBuilder<VideoPlayerBloc, VideoPlayerState>(
+          builder: (context, state) {
+            return _getPlayer(context, state);
+          },
         ),
       ),
     );

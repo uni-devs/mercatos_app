@@ -9,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../features/auth/features/login/data/repositories/login_repository.dart';
 import '../features/auth/features/login/data/repositories/video_player_repository.dart';
+import '../features/auth/features/login/logic/scrolling_cubit/scrolling_cubit.dart';
 
 part 'bloc_providers.dart';
 part 'repo_providers.dart';

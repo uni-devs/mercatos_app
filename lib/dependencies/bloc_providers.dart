@@ -6,6 +6,9 @@ MultiBlocProvider _listOfBlocProviders(Widget child) {
       BlocProvider<LoginBloc>(
         create: (context) => LoginBloc(),
       ),
+      BlocProvider<ScrollingCubit>(
+        create: (context) => ScrollingCubit(),
+      ),
     ],
     child: child,
   );
