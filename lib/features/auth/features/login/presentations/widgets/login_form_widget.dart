@@ -126,16 +126,24 @@ class LoginFormWidget extends StatelessWidget {
   }
 
   Widget _body(List<Widget> children) {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: MercatosConstants.horizontal_padding),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: MercatosUIFunctions.childrenWithSpacing(
-              children: children,
-              spacing: 14.h,
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(MercatosConstants.border_radius),
+        ),
+      ),
+      child: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MercatosConstants.horizontal_padding),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: MercatosUIFunctions.childrenWithSpacing(
+                children: children,
+                spacing: 14.h,
+              ),
             ),
           ),
         ),
