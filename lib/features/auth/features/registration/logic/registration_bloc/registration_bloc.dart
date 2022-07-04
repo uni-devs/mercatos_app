@@ -26,7 +26,7 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     required this.userTypeCubit,
     required this.sportInformationCubit,
     required this.reportInformationCubit,
-  }) : super(RegistrationInitial()) {
+  }) : super(RegistrationState.success) {
     on<RegistrationEvent>((event, emit) {});
   }
 }

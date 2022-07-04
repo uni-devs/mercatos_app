@@ -5,6 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:mercatos/components/network/mercatos_network.dart';
 import 'package:mercatos/features/auth/features/login/logic/login_form_bloc/login_bloc.dart';
+import 'package:mercatos/features/auth/features/registration/logic/basic_information_cubit/basic_information_cubit.dart';
+import 'package:mercatos/features/auth/features/registration/logic/registration_bloc/registration_bloc.dart';
+import 'package:mercatos/features/auth/features/registration/logic/report_information_cubit/report_information_cubit.dart';
+import 'package:mercatos/features/auth/features/registration/logic/set_password_cubit/set_password_cubit.dart';
+import 'package:mercatos/features/auth/features/registration/logic/sport_information_cubit/sport_information_cubit.dart';
+import 'package:mercatos/features/auth/features/registration/logic/user_type_cubit/user_type_cubit.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../features/auth/features/login/data/repositories/login_repository.dart';

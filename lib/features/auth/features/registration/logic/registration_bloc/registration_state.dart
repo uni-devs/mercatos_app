@@ -1,10 +1,28 @@
 part of 'registration_bloc.dart';
 
-abstract class RegistrationState extends Equatable {
-  const RegistrationState();
+enum RegistrationStatus {
+  initial,
+  loading,
+  success,
+  error,
+}
+
+class RegistrationState extends Equatable {
+  final RegistrationStatus status;
+
+  const RegistrationState({
+    required this.status,
+  });
+
+  // states
+  static RegistrationState get initial => const RegistrationState(
+        status: RegistrationStatus.initial,
+      );
+  // * temp state
+  static RegistrationState get success => const RegistrationState(
+        status: RegistrationStatus.success,
+      );
 
   @override
   List<Object> get props => [];
 }
-
-class RegistrationInitial extends RegistrationState {}
