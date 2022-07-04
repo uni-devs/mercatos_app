@@ -4,21 +4,22 @@ import 'package:mercatos/components/themes/mercatos_widget_styles.dart';
 enum TextFiledType { email, password, text, number, multiline }
 
 class StyledTextField extends StatefulWidget {
-  const StyledTextField(
-      {Key? key,
-      this.onChanged,
-      required this.hintText,
-      this.type = TextFiledType.text,
-      this.textInputAction,
-      this.error_message,
-      this.forced_hide_password_icon = false,
-      this.forced_remove_obscure = false,
-      this.initial_value,
-      this.autofocus = false,
-      this.onTap,
-      this.is_enabled = true,
-      this.suffixIcon})
-      : super(key: key);
+  const StyledTextField({
+    Key? key,
+    this.onChanged,
+    required this.hintText,
+    this.type = TextFiledType.text,
+    this.textInputAction,
+    this.error_message,
+    this.forced_hide_password_icon = false,
+    this.forced_remove_obscure = false,
+    this.initial_value,
+    this.autofocus = false,
+    this.onTap,
+    this.is_enabled = true,
+    this.suffixIcon,
+    this.prefixIcon,
+  }) : super(key: key);
 
   final void Function(String)? onChanged;
   final String hintText;
@@ -29,6 +30,7 @@ class StyledTextField extends StatefulWidget {
   final bool forced_remove_obscure;
   final bool is_enabled;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final String? initial_value;
 
   final bool autofocus;
@@ -103,6 +105,7 @@ class _StyledTextFieldState extends State<StyledTextField> {
         hintText: widget.hintText,
         suffixIcon: widget.suffixIcon ??
             (widget.forced_hide_password_icon == true ? null : _suffixIcon),
+        prefixIcon: widget.prefixIcon,
         errorText: widget.error_message,
       ),
 

@@ -9,6 +9,7 @@ abstract class MercatosColors {
   static const Color divider_color = Color(0xff8ECAE6);
   static const Color icon_button_color = Color(0xffF2F8FC);
   static const Color background_video_color = Colors.black;
+  static const Color accepted_color = Color(0xff21BC30);
 
   // static const Color h1_font_color = Color(0xFF13192B);
   // static const Color h2_font_color = Color(0xFF6B7280);

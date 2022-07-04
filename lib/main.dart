@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mercatos/components/themes/mercatos_themes.dart';
 import 'dependencies/dependencies.dart';
-import 'features/auth/features/login/presentations/login_screen.dart';
+import 'features/auth/features/registration/presentation/registration_screen.dart';
 
 void main() async {
   await DependencyInjection().registerSingleton(const MercatosApp());
@@ -19,7 +19,7 @@ class MercatosApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Mercatos',
         theme: MercatosThemes.data,
-        home: const Scaffold(),
+        home: const RegistrationScreen(),
       ),
     );
   }
