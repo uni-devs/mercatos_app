@@ -8,6 +8,8 @@ class WatcherUser implements User, UserCredentials {
   @override
   final String access_token;
   @override
+  final String refresh_token;
+  @override
   final String expired_date;
   @override
   final int id;
@@ -29,6 +31,7 @@ class WatcherUser implements User, UserCredentials {
     required this.access_token,
     required this.expired_date,
     required this.my_favor,
+    required this.refresh_token,
   });
 
   Map<String, dynamic> toMap() {
@@ -41,6 +44,7 @@ class WatcherUser implements User, UserCredentials {
       'email': email,
       'created_at': created_at,
       'updated_at': updated_at,
+      'refresh_token': refresh_token,
     };
   }
 
@@ -54,6 +58,7 @@ class WatcherUser implements User, UserCredentials {
       email: map['email'] ?? '',
       created_at: map['created_at'] ?? '',
       updated_at: map['updated_at'] ?? '',
+      refresh_token: map['refresh_token'] ?? '',
     );
   }
 
